@@ -1,0 +1,22 @@
+=========================
+Jenkins Installation
+=========================
+sudo apt-get update
+sudo apt-get install openjdk-8-jdk
+java -version
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+echo "deb https://pkg.jenkins.io/debian-stable binary/" >> /etc/apt/sources.list 
+sudo apt-get update 
+sudo apt-get install jenkins
+sudo systemctl status jenkins
+
+=========================
+Docker Installation
+=========================
+sudo -i
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+docker --version
+
+docker pull jenkins
+docker run -p 8080:8080 -p 50000:50000 jenkins
